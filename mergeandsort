@@ -1,0 +1,45 @@
+#include<stdio.h>
+void main()
+{
+    int ar[100],br[50],merge[100],i,k,n,m,j,temp;
+    printf("Enter the limit of first array");
+    scanf("%d",&n);
+    printf("Enter the elements of first array:");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&ar[i]);
+        merge[i]=ar[i];
+    }
+    k=i;
+    printf("Enter the limit of second array");
+    scanf("%d",&m);
+    printf("Enter the elements of first array:");
+    for(i=0;i<m;i++)
+    {
+        scanf("%d",&br[i]);
+        merge[k]=br[i];
+        k++;
+    }
+printf("Merged array Before Sorting:");
+for(i=0;i<k;i++)
+{
+    printf("%d",merge[i]);
+}
+for(i=0;i<k;i++)
+{
+    for(j=i+1;j<k;j++)
+    {
+        if(merge[i]>merge[j])
+        {
+            temp=merge[i];
+            merge[i]=merge[j];
+            merge[j]=temp;
+        }
+    }
+}
+printf(" \n After sorting");
+for(i=0;i<k;i++)
+{
+    printf("%d",merge[i]);
+}
+}
